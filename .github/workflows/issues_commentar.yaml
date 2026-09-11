@@ -2,7 +2,7 @@ name: Create a comment on new issues
 
 permissions:
   issues: write
-
+  
 on:
   issues:
     types: [opened]
@@ -12,4 +12,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Dump GitHub context"
-        run: echo '${{github}}'
+        run: echo '${{ toJson(github) }}'
